@@ -1,7 +1,7 @@
 <script lang="ts">
-import Bottom from "../components/bottom.svelte";
+import Bottom from "$lib/components/bottom.svelte";
 import "../app.css";
-import Top from "../components/top.svelte";
+import Top from "$lib/components/top.svelte";
 </script>
 
 <!-- <header>
