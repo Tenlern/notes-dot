@@ -1,5 +1,10 @@
 <script lang="ts">
+    // export let dark:boolean;
 
+    function toggleDarkMode() {
+        // dark = !dark
+        window.document.body.classList.toggle('dark')
+    }
 </script>
 
 <header class="flex items-center justify-between py-10">
@@ -21,7 +26,8 @@
                         <path d="M410.23 331.28v28.57l-64.67 58.65v-30.08l64.67-57.14Z" id="logo_svg__c"></path>
                     </defs>
                         <use xlink:href="#logo_svg__a" fill="url(#logo_svg__b)"></use>
-                        s<use xlink:href="#logo_svg__c" fill="url(#logo_svg__d)"></use>
+                        s
+                        <use xlink:href="#logo_svg__c" fill="url(#logo_svg__d)"></use>
                     </svg>
                 </div>
                 <div class="hidden h-6 text-2xl font-semibold sm:block">TailwindBlog</div>
@@ -43,7 +49,7 @@
                     About
                 </a>
             </div>
-            <button aria-label="Toggle Dark Mode" type="button" class="ml-1 mr-1 h-8 w-8 rounded p-1 sm:ml-4">
+            <button aria-label="Toggle Dark Mode" type="button" class="ml-1 mr-1 h-8 w-8 rounded p-1 sm:ml-4" on:click="{toggleDarkMode}">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                      class="text-gray-900 dark:text-gray-100">
                     <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
@@ -51,21 +57,15 @@
             </button>
             <div class="sm:hidden">
                 <button type="button" class="ml-1 mr-1 h-8 w-8 rounded py-1" aria-label="Toggle Menu">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                         class="text-gray-900 dark:text-gray-100">
-                        <path fill-rule="evenodd"
-                              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                              clip-rule="evenodd"></path>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="text-gray-900 dark:text-gray-100">
+                        <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
                     </svg>
                 </button>
                 <div class="fixed top-0 left-0 z-10 h-full w-full transform bg-gray-200 opacity-95 duration-300 ease-in-out dark:bg-gray-800 translate-x-full">
                     <div class="flex justify-end">
                         <button type="button" class="mr-5 mt-11 h-8 w-8 rounded" aria-label="Toggle Menu">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                                 class="text-gray-900 dark:text-gray-100">
-                                <path fill-rule="evenodd"
-                                      d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                      clip-rule="evenodd"></path>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="text-gray-900 dark:text-gray-100">
+                                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                             </svg>
                         </button>
                     </div>
