@@ -1,7 +1,3 @@
-<script>
-import '../app.css'
-</script>
-
 <h1 class="text-2xl" id="home">
     Main Content
 </h1>

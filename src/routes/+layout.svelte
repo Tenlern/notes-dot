@@ -1,3 +1,7 @@
+<script>
+    import '../app.css'
+</script>
+
 <div class="container p-2 mx-auto">
     <div class="flex flex-row flex-wrap py-4">
         <aside class="w-full sm:w-1/3 md:w-1/4 px-2">
@@ -5,28 +9,33 @@
                 <ul class="nav flex flex-col overflow-hidden">
                     <li class="nav-item">
                         <a class="nav-link text-purple-800 hover:text-purple-600 truncate" href="/#home">
-                            <span class="fa fa-home mr-2"></span> Home
+                            <span class="fa fa-home mr-2"></span>Home
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-purple-800 hover:text-purple-600 truncate" href="/#orders">
-                            <span class="fa fa-list-alt mr-2"></span> Orders </a>
+                        <a class="nav-link text-purple-800 hover:text-purple-600 truncate" href="/gifts">
+                            <span class="fa fa-list-alt mr-2"></span> Gifts
+                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-purple-800 hover:text-purple-600" href="/#products">
-                            <span class="fa fa-cart-plus mr-2"></span> Products </a>
+                            <span class="fa fa-cart-plus mr-2"></span> Products
+                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-purple-800 hover:text-purple-600" href="/#customers">
-                            <span class="fa fa-user mr-2"></span> Customers </a>
+                            <span class="fa fa-user mr-2"></span> Customers
+                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-purple-800 hover:text-purple-600" href="/#reports">
-                            <span class="fa fa-chart-bar mr-2"></span> Reports </a>
+                            <span class="fa fa-chart-bar mr-2"></span> Reports
+                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-purple-800 hover:text-purple-600" href="/#int">
-                            <span class="fa fa-layer-group mr-2"></span> Integrations </a>
+                            <span class="fa fa-layer-group mr-2"></span> Integrations
+                        </a>
                     </li>
                 </ul>
             </div>
