@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-    <title>List of Gits</title>
+    <title>List of Tags</title>
 </svelte:head>
 
 <h1 class="text-2xl" id="home">
