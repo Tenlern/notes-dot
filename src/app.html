@@ -5,9 +5,8 @@
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 		<meta name="viewport" content="width=device-width" />
 		%sveltekit.head%
-		<!-- %sveltekit.assets% -->
 	</head>
-	<body class="flex flex-col min-h-screen">
-		%sveltekit.body%
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
 	</body>
 </html>
