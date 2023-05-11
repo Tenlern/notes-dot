@@ -19,7 +19,7 @@
                 <li class="pure-menu-item"><a href="/about" class="pure-menu-link">About</a></li>
 
                 <li class="pure-menu-item menu-item-divided pure-menu-selected">
-                    <a href="#" class="pure-menu-link">Services</a>
+                    <a href="/services" class="pure-menu-link">Services</a>
                 </li>
 
                 <li class="pure-menu-item"><a href="#contact" class="pure-menu-link">Contact</a></li>
