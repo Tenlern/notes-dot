@@ -1,33 +1,22 @@
 <script lang="ts">
-    import 'purecss'
-    import '../app.css'
+	import 'bulma';
+	import '../app.css';
+	import type { LayoutServerData } from './$types';
+	import SideMenu from "$lib/components/SideMenu.svelte";
+
+	export let data: LayoutServerData;
 </script>
 
-<div id="layout" class="pure-g">
-    <!-- Menu toggle -->
-    <a href="#menu" id="menuLink" class="menu-link">
-        <!-- Hamburger icon -->
-        <span></span>
-    </a>
+<div id="layout" class="columns is-gapless">
+	<aside id="sidebar" class="column is-3-tablet">
+		<div class="container p-2">
+			<SideMenu sections="{data.sections}">
+			</SideMenu>
+		</div>
 
-    <aside id="menu" class="pure-u-1-4">
-        <div class="pure-menu">
-            <a class="pure-menu-heading" href="#company">Company</a>
+	</aside>
 
-            <ul class="pure-menu-list">
-                <li class="pure-menu-item"><a href="/" class="pure-menu-link">Home</a></li>
-                <li class="pure-menu-item"><a href="/about" class="pure-menu-link">About</a></li>
-
-                <li class="pure-menu-item menu-item-divided pure-menu-selected">
-                    <a href="/services" class="pure-menu-link">Services</a>
-                </li>
-
-                <li class="pure-menu-item"><a href="#contact" class="pure-menu-link">Contact</a></li>
-            </ul>
-        </div>
-    </aside>
-
-    <main id="main" class="pure-u-3-4">
-        <slot></slot>
-    </main>
+	<main id="main" class="column">
+		<slot />
+	</main>
 </div>
