@@ -7,21 +7,36 @@ generator client {
 
 datasource db {
   provider = "sqlite"
-  url      = env("DATABASE_URL")
+  url      = "file:./dev.db"
+}
+
+model Section {
+  id Int @id @default(autoincrement())
+  name String
+  sort Int @default(10)
+  tags Tag[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model Tag {
-  id Int @id @default(autoincrement())
-  name String
-  bg_color String
+  id         Int       @id @default(autoincrement())
+  name       String
+  bg_color   String
   text_color String
-  gifts Gift[]
+  articles   Article[]
+  section Section @relation(fields: [sectionId], references: [id])
+  sectionId Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
-model Gift {
-  id Int @id @default(autoincrement())
-  name String
+model Article {
+  id          Int    @id @default(autoincrement())
+  name        String
   description String
-  system String
-  tags Tag[]
+  system      String
+  tags        Tag[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
