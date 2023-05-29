@@ -7,7 +7,7 @@
 	export let data: LayoutServerData;
 </script>
 
-<div id="layout" class="columns is-gapless">
+<div id="layout" class="columns">
 	<aside id="sidebar" class="column is-3-tablet">
 		<div class="container p-2">
 			<SideMenu sections="{data.sections}">

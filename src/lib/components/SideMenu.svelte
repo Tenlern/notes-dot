@@ -3,13 +3,14 @@
 	import { page } from "$app/stores";
 	import { slugify } from "$lib/slugify.js";
 	export let sections: Section[];
+	let currentSection: string;
 	$: currentSection = $page.params.sectionUrl || ''
 	console.log($page)
 </script>
 
 <div class="menu">
 	<p class="menu-label">
-		<a class="title is-3" href="/">Notes</a>
+		<a class="title is-3" href="/">Notes&.</a>
 	</p>
 
 	<ul class="menu-list">
