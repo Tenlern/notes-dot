@@ -13,6 +13,7 @@ datasource db {
 model Section {
   id Int @id @default(autoincrement())
   name String
+  url String @unique
   sort Int @default(10)
   tags Tag[]
   createdAt DateTime @default(now())

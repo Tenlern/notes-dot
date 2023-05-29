@@ -3,11 +3,8 @@
 	import { page } from "$app/stores";
 	import { slugify } from "$lib/slugify.js";
 	export let sections: Section[];
-	let currentPage: string = $page.url.pathname;
-
-	function url(section: Section) {
-		return '/' + slugify(section.name) + '/'
-	}
+	$: currentSection = $page.params.sectionUrl || ''
+	console.log($page)
 </script>
 
 <div class="menu">
@@ -18,12 +15,14 @@
 	<ul class="menu-list">
 		{#each sections as section}
 			<li>
-				<a class:active={currentPage === url(section)} href={url(section)}>
+				<a class:is-active={currentSection.includes(section.url)} href="/{section.url}/">
 					{section.name}
 				</a>
 			</li>
 		{/each}
 
-		<li class="pure-menu-item"><a href="#contact" class="pure-menu-link">Contact</a></li>
+		<li class="">
+			<a href="/contact/" class="">Contact</a>
+		</li>
 	</ul>
 </div>

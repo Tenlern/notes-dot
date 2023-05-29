@@ -4,5 +4,5 @@ export const load = (async () => {
 	const prisma = new PrismaClient();
 	const sections = await prisma.section.findMany();
 
-	return { sections: sections, foo: [], bar: 'test' };
+	return { sections };
 }) satisfies LayoutServerLoad;
