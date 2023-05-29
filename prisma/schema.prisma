@@ -11,11 +11,11 @@ datasource db {
 }
 
 model Section {
-  id Int @id @default(autoincrement())
-  name String
-  url String @unique
-  sort Int @default(10)
-  tags Tag[]
+  id        Int      @id @default(autoincrement())
+  name      String
+  url       String   @unique
+  sort      Int      @default(10)
+  tags      Tag[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -23,21 +23,21 @@ model Section {
 model Tag {
   id         Int       @id @default(autoincrement())
   name       String
-  bg_color   String
-  text_color String
+  bg_color   String?
+  text_color String?
   articles   Article[]
-  section Section @relation(fields: [sectionId], references: [id])
-  sectionId Int
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  section    Section   @relation(fields: [sectionId], references: [id])
+  sectionId  Int
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
 }
 
 model Article {
-  id          Int    @id @default(autoincrement())
+  id          Int      @id @default(autoincrement())
   name        String
   description String
   system      String
   tags        Tag[]
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
