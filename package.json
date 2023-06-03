@@ -40,6 +40,6 @@
 	},
 	"type": "module",
 	"prisma": {
-		"seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
+		"seed": "ts-node --esm prisma/seed.ts"
 	}
 }

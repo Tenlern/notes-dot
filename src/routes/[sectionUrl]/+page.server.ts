@@ -7,6 +7,9 @@ export const load =  (async ({ params }) => {
     const section = await prisma.section.findUnique({
         where: {
             url: params.sectionUrl
+        },
+        include: {
+            tags: true
         }
     })
 
