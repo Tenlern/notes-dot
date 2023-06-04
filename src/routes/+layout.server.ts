@@ -1,8 +1,11 @@
-import { PrismaClient } from '@prisma/client';
 import type { LayoutServerLoad } from './$types';
+import prisma from "$lib/prisma";
 export const load = (async () => {
-	const prisma = new PrismaClient();
-	const sections = await prisma.section.findMany();
+	const sections = await prisma.section.findMany({
+		include: {
+			tags: true
+		}
+	});
 
 	return { sections };
 }) satisfies LayoutServerLoad;

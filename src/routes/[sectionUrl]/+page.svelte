@@ -7,10 +7,30 @@
     {data.section.name}
 </h1>
 
-{#if (data.section.tags.length)}
-    <ul>
-        {#each data.section.tags as tag}
-            <li>{tag.name}</li>
-        {/each}
-    </ul>
-{/if}
+<nav class="section">
+    {#if (data.section.tags.length)}
+        <ul class="level">
+            {#each data.section.tags as tag}
+                <li class="level-item">
+                    <div class="tag">
+                        <a href="/" class="is-active">
+                            {tag.name}
+                        </a>
+                    </div>
+                </li>
+            {/each}
+        </ul>
+    {/if}
+</nav>
+
+<section class="section">
+    {#if (data.articles.length)}
+        <article>
+            {#each data.articles as article}
+                <h2>{article.name}</h2>
+            {/each}
+        </article>
+    {:else}
+        Nothing to show
+    {/if}
+</section>

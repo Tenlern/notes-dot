@@ -1,9 +1,8 @@
 import type { PageServerLoad } from './$types';
-import { PrismaClient } from "@prisma/client";
 import { error } from '@sveltejs/kit';
+import prisma from "$lib/prisma";
 
 export const load =  (async ({ params }) => {
-    const prisma = new PrismaClient();
     const section = await prisma.section.findUnique({
         where: {
             url: params.sectionUrl
@@ -19,7 +18,17 @@ export const load =  (async ({ params }) => {
         });
     }
 
-    return {
-       section
-    }
+    const articles  = await prisma.article.findMany({
+        where: {
+            tags: {
+                some: {
+                    id: {
+                        in: section.tags.map(tag => tag.id)
+                    }
+                }
+            },
+        }
+    })
+
+    return { section, articles }
 }) satisfies PageServerLoad
