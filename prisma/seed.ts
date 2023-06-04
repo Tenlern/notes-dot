@@ -6,6 +6,7 @@ const numberOfTags = 15
 const numberOfSections = 5
 const numberOfArticles = 60
 const tagsPerArticle = 3
+
 async function main() {
   const sections: number[] = []
   const tags: number[][] = []
@@ -35,6 +36,17 @@ async function main() {
     tags[sectionId].push(tag.id)
   }
   console.log(tags);
+
+  for (let i = 0; i < numberOfSections; i++) {
+    const sectionId = Math.floor(Math.random() * sections.length)
+    const article = await prisma.article.create({
+      data: {
+        name: faker.lorem.word(),
+        description: faker.lorem.paragraph()
+      }
+    })
+    tags[sectionId].push(tag.id)
+  }
 
   // await prisma.section.createMany({data: sections})
   //
