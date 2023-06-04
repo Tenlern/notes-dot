@@ -26,7 +26,7 @@ async function main() {
 
 
   for (let i = 0; i < numberOfTags; i++) {
-    const sectionId = Math.floor(Math.random() * sections.length)
+    const sectionId = sections[Math.floor(Math.random() * sections.length)]
     const tag = await prisma.tag.create({
       data: {
         name: faker.lorem.word(),
@@ -39,7 +39,7 @@ async function main() {
   console.log(tags);
 
   for (let i = 0; i < numberOfArticles; i++) {
-    const sectionId = Math.floor(Math.random() * sections.length)
+    const sectionId = sections[Math.floor(Math.random() * sections.length)]
     const tagIDs = [];
     for (let j = 0; j < tagsPerArticle; j++) {
       tagIDs.push({id: tags[sectionId][Math.floor(Math.random() * tags[sectionId].length)]})

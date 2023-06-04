@@ -40,6 +40,9 @@
 	},
 	"type": "module",
 	"prisma": {
-		"seed": "ts-node --esm prisma/seed.ts"
+		"seed": "tsx prisma/seed.ts"
+	},
+	"dependencies": {
+		"tsx": "^3.12.7"
 	}
 }
