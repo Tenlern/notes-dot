@@ -1,4 +1,3 @@
 import {writable} from "svelte/store";
 
-const ArticleStore = writable([])
-export default ArticleStore;
+export const ArticleStore = writable([])

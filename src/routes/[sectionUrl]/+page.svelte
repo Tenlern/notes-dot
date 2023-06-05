@@ -1,6 +1,7 @@
 <script lang="ts">
     import type {PageServerData} from "./$types";
     import {writable} from "svelte/store";
+    import ArticleFilter from "$lib/components/ArticleFilter.svelte";
 
     export let data: PageServerData;
     const articles = writable([]);
@@ -14,26 +15,7 @@
 </h1>
 
 <nav class="">
-    <form action="">
-        <div class="control has-icons-right">
-            <input class="input" type="text" placeholder="Search" value="bulma">
-            <span class="icon is-small is-right">
-        <i class="fas fa-check"></i>
-      </span>
-        </div>
-
-        {#if (data.section.tags.length)}
-            <div class="control">
-                {#each data.section.tags as tag}
-                    <input name="tags[]" value="{tag.name}" type="checkbox" class="">
-                    <span class="tag">{tag.name}</span>
-
-                {/each}
-            </div>
-        {/if}
-    </form>
-
-
+  <ArticleFilter tags="{data.section.tags}"></ArticleFilter>
 </nav>
 
 <section class="section">
