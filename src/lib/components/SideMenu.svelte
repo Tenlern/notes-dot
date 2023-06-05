@@ -20,15 +20,15 @@
 				<a class:is-active={isCurrent(section.url)} href="/{section.url}/">
 					{section.name}
 				</a>
-				{#if section.tags.length && isCurrent(section.url)}
-					<ul>
-						{#each section.tags as tag}
-							<a href="/{section.url}/{tag.name}/">
-								{tag.name}
-							</a>
-						{/each}
-					</ul>
-				{/if}
+				<!--{#if section.tags.length && isCurrent(section.url)}-->
+				<!--	<ul>-->
+				<!--		{#each section.tags as tag}-->
+				<!--			<a href="/{section.url}/{tag.name}/">-->
+				<!--				{tag.name}-->
+				<!--			</a>-->
+				<!--		{/each}-->
+				<!--	</ul>-->
+				<!--{/if}-->
 			</li>
 		{/each}
 	</ul>

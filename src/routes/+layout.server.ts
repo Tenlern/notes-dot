@@ -4,7 +4,12 @@ export const load = (async () => {
 	const sections = await prisma.section.findMany({
 		include: {
 			tags: true
-		}
+		},
+		orderBy: [
+			{
+				sort: 'asc'
+			}
+		]
 	});
 
 	return { sections };

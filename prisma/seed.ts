@@ -36,7 +36,6 @@ async function main() {
     tags[sectionId].push(tag.id)
 
   }
-  console.log(tags);
 
   for (let i = 0; i < numberOfArticles; i++) {
     const sectionId = sections[Math.floor(Math.random() * sections.length)]

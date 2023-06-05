@@ -27,6 +27,9 @@ export const load =  (async ({ params }) => {
                     }
                 }
             },
+        },
+        include: {
+            tags: true
         }
     })
 
