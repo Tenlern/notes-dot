@@ -5,7 +5,6 @@
 
     export let data: PageServerData;
     const articles = writable([]);
-    console.log(data.articles)
     $: articles.set(data.articles);
 
 </script>

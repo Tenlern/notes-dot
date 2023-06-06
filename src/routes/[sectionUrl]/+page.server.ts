@@ -5,11 +5,18 @@ import { getList } from "$lib/repositories/articles";
 
 export const load =  (async ({ url, params }) => {
     const search = url.searchParams.get('search');
-    const tags: number[]|undefined = url.searchParams.get('tags')?.split(',').map(item => parseInt(item))
+    let tags: number[]|undefined = url.searchParams.get('tags')?.split(',').map(item => parseInt(item))
 
-    const section = await prisma.section.findUnique({
+    const section = await prisma.section.findFirst({
         where: {
-            url: params.sectionUrl
+            url: params.sectionUrl,
+            tags: {
+                every: {
+                    id: {
+                        in: tags
+                    }
+                }
+            }
         },
         include: {
             tags: true
@@ -22,9 +29,16 @@ export const load =  (async ({ url, params }) => {
         });
     }
 
+    if (tags === undefined) {
+        tags = [];
+        if (section.tags.length) {
+            tags = section.tags.map(tag => tag.id)
+        }
+    }
+
     const articles  = await getList(search, tags)
 
-    return { section, articles }
+    return { section, articles, search, tags }
 }) satisfies PageServerLoad
 
 export const actions = {

@@ -25,7 +25,7 @@
   }
 </script>
 
-<form action="" onchange="submitFilter()">
+<form action="" on:input={submitFilter()}>
   <div class="control has-icons-right">
     <input class="input" type="text" placeholder="Search" bind:value={search}>
     <span class="icon is-small is-right">
@@ -35,10 +35,14 @@
 
   {#if (tags.length)}
     <div class="control">
-      {#each tags as tag}
-        <input class="" name="tags[]" value="{tag.name}" type="checkbox">
-        <span class="tag">{tag.name}</span>
-      {/each}
+      <div class="tags">
+        {#each tags as tag}
+          <div class="">
+            <input class="" name="tags[]" value="{tag.name}" type="checkbox">
+            <span class="tag">{tag.name}</span>
+          </div>
+        {/each}
+      </div>
     </div>
   {/if}
 </form>
