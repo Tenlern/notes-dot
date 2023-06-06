@@ -14,7 +14,8 @@
 </h1>
 
 <nav class="">
-  <ArticleFilter tags="{data.section.tags}"></ArticleFilter>
+  <ArticleFilter tags="{data.section.tags}" search="{data.search}" >
+  </ArticleFilter>
 </nav>
 
 <section class="section">
@@ -44,7 +45,6 @@
                     </div>
                 </div>
                 <footer class="card-footer">
-                    <a href="#" class="card-footer-item">Save</a>
                     <a href="#" class="card-footer-item">Edit</a>
                     <a href="#" class="card-footer-item">Delete</a>
                 </footer>
