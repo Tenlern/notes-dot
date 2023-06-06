@@ -2,27 +2,8 @@
   import type { Tag } from "@prisma/client";
 
   export let tags: Tag[];
-  let loading = false;
   export let search = '';
   export let selectedTags = [];
-
-  // async function submit() {
-  //   if (loading) {
-  //     return;
-  //   }
-  //   let params = new URLSearchParams()
-  //   if (search.length) {
-  //     params.set('search', search)
-  //   }
-  //   if (selectedTags.length) {
-  //     params.set('search', search)
-  //   }
-  //
-  //   loading = true
-  //   let res = await fetch('/api/aricles?'+params.toString)
-  //   console.log(res.json());
-  //   loading = false
-  // }
 </script>
 
 <form method="POST">
@@ -38,7 +19,7 @@
       <div class="tags">
         {#each tags as tag}
           <div class="">
-            <input class="" name="tags" value="{tag.id}" type="checkbox">
+            <input class="" name="tags" value="{tag.id}" type="checkbox" bind:group={selectedTags}>
             <span class="tag">{tag.name}</span>
           </div>
         {/each}

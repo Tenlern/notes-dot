@@ -14,7 +14,7 @@
 </h1>
 
 <nav class="">
-  <ArticleFilter tags="{data.section.tags}" search="{data.search}" >
+  <ArticleFilter tags="{data.section.tags}" search="{data.search}" selectedTags="{data.selected}">
   </ArticleFilter>
 </nav>
 
