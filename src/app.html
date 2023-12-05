@@ -1,22 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Notes & Dot</title>
-  <meta name="author" content="name" />
-  <meta name="description" content="description here" />
-  <meta name="keywords" content="keywords,here" />
-
-  <link rel="icon" href="%sveltekit.assets%/svelte-logo.svg" sizes="any" type="image/svg+xml">
-
-  %sveltekit.head%
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Hello Bulma!</title>
+	<link rel="stylesheet" href="/src/lib/css/bulma.min.css">
+	%sveltekit.head%
 </head>
-
-<body data-sveltekit-preload-data="hover">
-<div id="app">
-  %sveltekit.body%
-</div>
+<body>
+<section class="section">
+	<div class="container">
+		%sveltekit.body%
+	</div>
+</section>
 </body>
 </html>

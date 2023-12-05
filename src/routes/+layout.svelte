@@ -1,22 +1,10 @@
-<script lang="ts">
-	import 'bulma';
-	import '../app.css';
-	import type { LayoutServerData } from './$types';
-	import SideMenu from "$lib/components/SideMenu.svelte";
-
-	export let data: LayoutServerData;
-</script>
-
-<div id="layout" class="columns">
-	<aside id="sidebar" class="column is-3-tablet">
-		<div class="container p-2">
-			<SideMenu sections="{data.sections}">
-			</SideMenu>
-		</div>
-
-	</aside>
-
-	<main id="main" class="column">
-		<slot />
-	</main>
+<div class="columns">
+    <aside class="column is-one-quarter">
+        <h1 class="">
+            NotesDot
+        </h1>
+    </aside>
+    <main class="column">
+        <slot></slot>
+    </main>
 </div>
